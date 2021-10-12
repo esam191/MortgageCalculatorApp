@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Mortgage Calculator App</string>
+    <string name="mortgage_principle_amount">Mortgage Principle Amount</string>
+    <string name="length_of_loan">Length of Loan</string>
+    <string name="interest_rate">Interest Rate</string>
+    <string name="calculate_emi">Calculate EMI</string>
+    <string name="payment_frequency">Payment Frequency: Monthly</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_years">Enter # of Years</string>
+    <string name="enter_interest">Enter Interest</string>
 </resources>
