@@ -6,65 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/calculate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="35dp"
-        android:text="@string/mortgage_principle_amount"
-        app:layout_constraintStart_toStartOf="@+id/amount_box"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="93dp"
+        android:text="@string/calculate_emi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <EditText
+        android:id="@+id/interest_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/length_of_loan"
-        app:layout_constraintBottom_toTopOf="@+id/years_box"
-        app:layout_constraintEnd_toEndOf="@+id/years_box"
-        app:layout_constraintStart_toStartOf="@+id/years_box" />
+        android:layout_marginTop="73dp"
+        android:ems="10"
+        android:hint="@string/enter_interest"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/years_box"
+        app:layout_constraintTop_toBottomOf="@+id/years_box" />
+
+    <EditText
+        android:id="@+id/years_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="73dp"
+        android:ems="10"
+        android:hint="@string/enter_years"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/amount_box"
+        app:layout_constraintTop_toBottomOf="@+id/amount_box" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="22dp"
         android:text="@string/interest_rate"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/interest_box"
         app:layout_constraintEnd_toEndOf="@+id/interest_box"
         app:layout_constraintStart_toStartOf="@+id/interest_box" />
-
-    <Button
-        android:id="@+id/calculate_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="62dp"
-        android:text="@string/calculate_emi"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/answer_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="62dp"
-        android:text="@string/result_box"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculate_button"
-        app:layout_constraintVertical_bias="0.614" />
 
     <EditText
         android:id="@+id/amount_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:hint="@string/enter_amount"
         android:inputType="numberDecimal"
@@ -73,38 +64,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/years_box"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:ems="10"
-        android:hint="@string/enter_years"
-        android:inputType="number"
-        android:minHeight="48dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="93dp"
+        android:text="@string/mortgage_principle_amount"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/amount_box"
-        app:layout_constraintTop_toBottomOf="@+id/amount_box" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/interest_box"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:hint="@string/enter_interest"
-        app:layout_constraintStart_toStartOf="@+id/years_box"
-        app:layout_constraintTop_toBottomOf="@+id/years_box" />
+        android:layout_marginBottom="22dp"
+        android:text="@string/length_of_loan"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/years_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/payment_frequency"
-        app:layout_constraintEnd_toEndOf="@+id/interest_box"
-        app:layout_constraintTop_toBottomOf="@+id/interest_box" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interest_box"
+        app:layout_constraintVertical_bias="0.879" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

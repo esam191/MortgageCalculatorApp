@@ -2,6 +2,7 @@ package com.example.mortgagecalculatorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,21 +35,20 @@ public class MainActivity extends AppCompatActivity {
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double P = Double.parseDouble(input_amount.getText().toString());
-                double r = ((Double.parseDouble(input_interest.getText().toString()) /100) /12);
-                int n = Integer.parseInt(input_years.getText().toString()) * 12;
-                double x = Math.pow((1+r),n);
-                Double M = P*((r*x)/(x-1));
-                ans_text.setText(String.format("%.1f",M));
+                calcMortgage();
             }
         });
     }
 
+    public void calcMortgage() {
+        double P = Double.parseDouble(input_amount.getText().toString());
+        double r = ((Double.parseDouble(input_interest.getText().toString()) /100) /12);
+        int n = Integer.parseInt(input_years.getText().toString()) * 12;
+        double x = Math.pow((1+r),n);
+        Double M = P*((r*x)/(x-1));
 
-
-
-
-
-
-
+        Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+        intent.putExtra(ResultActivity.mortgage, M);
+        startActivity(intent);
+    }
 }
