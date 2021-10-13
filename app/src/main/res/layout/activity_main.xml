@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_red"
     tools:context=".MainActivity">
 
     <Button
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:text="@string/interest_rate"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/interest_box"
         app:layout_constraintEnd_toEndOf="@+id/interest_box"
@@ -71,6 +73,7 @@
         android:layout_marginStart="7dp"
         android:layout_marginTop="93dp"
         android:text="@string/mortgage_principle_amount"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/amount_box"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:text="@string/length_of_loan"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/years_box"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="@string/payment_frequency"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/calculate_button"
         app:layout_constraintEnd_toEndOf="parent"
