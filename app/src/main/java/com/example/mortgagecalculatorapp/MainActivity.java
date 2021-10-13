@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* matching the variables with their appropriate
+        IDs defined in the layout file */
         input_amount = findViewById(R.id.amount_box);
         input_years = findViewById(R.id.years_box);
         input_interest = findViewById(R.id.interest_box);
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ans_text = findViewById(R.id.answer_text);
         calc_button = findViewById(R.id.calculate_button);
 
+        //OnClickListener handles action for when the button is clicked
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,13 +43,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /* function calculates the mortgage payment and starts an intent that passes the result
+    value to the Result Activity */
     public void calcMortgage() {
+        //P holds mortgage principle amount
         double P = Double.parseDouble(input_amount.getText().toString());
+        //r holds the interest rate in percent
         double r = ((Double.parseDouble(input_interest.getText().toString()) /100) /12);
+        // n holds the amortization period in years
         int n = Integer.parseInt(input_years.getText().toString()) * 12;
         double x = Math.pow((1+r),n);
+        //final result
         Double M = P*((r*x)/(x-1));
-
+        //Intent created to pass value from the MainActivity to ResultActivity
         Intent intent = new Intent(MainActivity.this,ResultActivity.class);
         intent.putExtra(ResultActivity.mortgage, M);
         startActivity(intent);
