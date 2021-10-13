@@ -8,4 +8,5 @@
     <string name="enter_amount">Enter Amount</string>
     <string name="enter_years">Enter # of Years</string>
     <string name="enter_interest">Enter Interest</string>
+    <string name="result_box">0</string>
 </resources>
